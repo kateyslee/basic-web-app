@@ -42,6 +42,14 @@ describe("QueryProcessor", () => {
         ));
     });
 
+    test('should return sum', () => {
+        const query = "What is 18 minus 51?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "-33"
+        ));
+    });
+
     test('should return product', () => {
         const query = "What is 4 multiplied by 12?";
         const response: string = QueryProcessor(query);
@@ -50,12 +58,20 @@ describe("QueryProcessor", () => {
         ));
     });
 
-    // test('should return cube and square', () => {
-    //     const query = "Which of the following numbers is both a square and a cube: 3306, 4096, 2556, 3845, 2601, 2011?";
-    //     const response: string = QueryProcessor(query);
-    //     expect(response).toBe((
-    //         "48"
-    //     ));
-    // });
+    test('should return cube and square', () => {
+        const query = "Which of the following numbers is both a square and a cube: 1, 64, 9?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "1,64"
+        ));
+    });
+
+    test('should return cube and square', () => {
+        const query = "Which of the following numbers is both a square and a cube: 9?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "None"
+        ));
+    });
 
 });
