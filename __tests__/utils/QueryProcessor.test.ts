@@ -50,4 +50,12 @@ describe("QueryProcessor", () => {
         ));
     });
 
+    // test('should return cube and square', () => {
+    //     const query = "Which of the following numbers is both a square and a cube: 3306, 4096, 2556, 3845, 2601, 2011?";
+    //     const response: string = QueryProcessor(query);
+    //     expect(response).toBe((
+    //         "48"
+    //     ));
+    // });
+
 });

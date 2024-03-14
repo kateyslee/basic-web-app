@@ -53,6 +53,20 @@ export default function QueryProcessor(query: string): string {
     }
   }
 
+  if (query.toLowerCase().includes("square and a cube")) {
+    const numbers = query.match(/\d+/g);
+    if (numbers) {
+      const numberArray = numbers.map(Number);
+      
+      const squareAndCubeNumbers = numberArray.filter(number => {
+        const sixthRoot = Math.pow(number, 1/6);
+        return sixthRoot % 1 === 0; // Check if the sixth root is an integer
+      });
+
+      return squareAndCubeNumbers.toString();
+    }
+  }
+
 
   return "";
 }
