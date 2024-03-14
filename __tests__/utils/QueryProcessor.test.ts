@@ -42,4 +42,12 @@ describe("QueryProcessor", () => {
         ));
     });
 
+    test('should return product', () => {
+        const query = "What is 4 multiplied by 12?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "48"
+        ));
+    });
+
 });
