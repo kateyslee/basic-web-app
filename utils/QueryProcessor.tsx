@@ -11,6 +11,10 @@ export default function QueryProcessor(query: string): string {
       "yoonseol"
     );
   }
-
+  if (query.toLowerCase().includes("name")) {
+    return (
+      "kate"
+    );
+  }
   return "";
 }
