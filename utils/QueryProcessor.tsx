@@ -64,6 +64,17 @@ export default function QueryProcessor(query: string): string {
     }
   }
 
+  if (query.toLowerCase().includes("power")) {
+    const numbers = query.match(/\d+/g);
+    if (numbers) {
+      const numberArray = numbers.map(Number);
+      
+      return (Math.pow(numberArray[0],numberArray[1])).toString();
+      // Return the largest number as a string
+      // return sum.toString();
+    }
+  }
+
   if (query.toLowerCase().includes("square and a cube")) {
     const numbers = query.match(/\d+/g);
     if (numbers) {

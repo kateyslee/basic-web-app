@@ -58,6 +58,14 @@ describe("QueryProcessor", () => {
         ));
     });
 
+    test('should return pow', () => {
+        const query = "What is 4 to the power of 2?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "16"
+        ));
+    });
+
     test('should return cube and square', () => {
         const query = "Which of the following numbers is both a square and a cube: 1, 64, 9?";
         const response: string = QueryProcessor(query);
