@@ -16,12 +16,20 @@ export default function QueryProcessor(query: string): string {
       "ink98202"
     );
   }
-  if (query.toLowerCase().includes("numbers is the largest")) {
-    const numbers = query.match(/\d+/g).map(Number);
-    // Find the largest number
-    const largestNumber = Math.max(...numbers);
-    // Return the largest number as a string
-    return largestNumber.toString();
+  if (query.toLowerCase().includes("largest")) {
+    const numbers = query.match(/\d+/g);
+    if (numbers) {
+      const numberArray = numbers.map(Number);
+      
+      const largestNumber = Math.max(...numberArray);
+      // Return the largest number as a string
+      return largestNumber.toString();
+    }
+    // const numbers = query.match(/\d+/g).map(Number);
+    // // Find the largest number
+    // const largestNumber = Math.max(numberArray);
+    // // Return the largest number as a string
+    // return largestNumber.toString();
   }
 
   // if (query.toLowerCase().includes("plus")) {
