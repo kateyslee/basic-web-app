@@ -25,4 +25,13 @@ describe("QueryProcessor", () => {
             "yoonseol"
         ));
     });
+
+    test('should return an andrew id', () => {
+        const query = "Which of the following numbers is the largest: 49, 66, 52?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "66"
+        ));
+    });
+
 });
