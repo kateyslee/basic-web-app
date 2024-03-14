@@ -34,4 +34,12 @@ describe("QueryProcessor", () => {
         ));
     });
 
+    test('should return sum', () => {
+        const query = "What is 27 plus 23?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "50"
+        ));
+    });
+
 });

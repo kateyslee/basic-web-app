@@ -32,9 +32,16 @@ export default function QueryProcessor(query: string): string {
     // return largestNumber.toString();
   }
 
-  // if (query.toLowerCase().includes("plus")) {
-  //   query 
-  // }
+  if (query.toLowerCase().includes("plus")) {
+    const numbers = query.match(/\d+/g);
+    if (numbers) {
+      const numberArray = numbers.map(Number);
+      
+      const sum = numberArray.reduce((acc, current) => acc + current, 0);
+      // Return the largest number as a string
+      return sum.toString();
+    }
+  }
 
   return "";
 }
